@@ -1,0 +1,138 @@
+@charset "utf-8";
+
+* {
+    margin:0; padding:0; box-sizing: border-box;
+}
+img {
+    display: block; max-width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+/* header */
+header {
+    display:flex; justify-content: space-between; align-items: flex-start;
+    position:absolute; width:100%; height: 100px; z-index: 1;
+    padding:30px 60px; background:yellow;
+    transition:height 0.5s; overflow: hidden;
+}
+header:hover {
+    height:350px;
+}
+header img {
+    width:170px;
+}
+header ul {
+    list-style: none;
+    display: flex; margin-top:-10px;
+}
+header a {
+    display:block; border:0px solid red;
+    color:#333;
+}
+header li>a {
+    padding:20px 50px; 
+    font-weight:bold; font-size:1.1rem;    
+    transition:padding 0.5s; 
+}
+header:hover li>a {
+    padding:20px 70px;
+}
+header nav {
+    padding-top:30px;
+}
+header nav a{
+    padding:15px; text-align: center;
+}
+header div {
+    display: flex;
+}
+header button {
+    border:none; background:transparent;
+    margin-left:50px;
+}
+header button.material-symbols-outlined:hover {
+    color:orangered ;
+}
+header button:nth-child(1) {
+    background:orangered; padding:7px 20px; border-radius:50px;
+    color:white; font-weight:bold;
+    display:flex; align-items: center;
+}
+header button:nth-child(1) b {
+    font-weight:200;
+}
+header button:nth-child(2) {
+    font-size:2rem; color:#555;
+    transform:rotate(-90deg);
+}
+header button:nth-child(3) {
+    font-size:2.5rem; color:#333;
+}
+
+/* visual */
+#visual {
+    position:relative; height:100vh; overflow: hidden;
+}
+#visual section {
+    position:absolute; width:100%; height:100%;
+    top:0; left:0;    
+    background:url("") no-repeat center center;    
+}
+#visual section:nth-child(1) {
+    background-image: url('../images/city01.jpg');    
+}
+#visual section:nth-child(1).view {
+    animation:big 3s both ;
+}
+
+#visual section:nth-child(2) {
+    background-image: url('../images/city02.jpg');
+    opacity:0; 
+}
+#visual section:nth-child(2).view {
+    opacity:1; 
+    animation:big 4s both ;
+}
+
+@keyframes big {
+    from {background-size: 110%;}
+    to   {background-size: 130%;}
+}
+/* visual 오른쪽 흰글자 */
+#visual div {    
+    position:absolute; top:38%; right:23%;
+    color:white; 
+    transition:height 0.3s;     
+}
+#visual section.view div {
+    animation:height 1s 1s both;
+    overflow: hidden; height:300px;
+}
+@keyframes height {
+    from {transform: translateY(100px); opacity:0;}
+    to   {transform: translateY(0); opacity:1;}
+}
+#visual h2 {
+    font-size:5.5rem; text-shadow:0 0 10px rgba(0,0,0, 0.3);
+}
+#visual h2 b {
+    display:block;
+    font-size:2.5rem;
+}
+#visual a {
+    background: orangered; color:white;
+    cursor:pointer; position:relative; z-index: 1;
+    padding:12px 23px; border-radius:30px;
+    display:flex; align-items: center;
+    width:fit-content; margin-top:35px;
+    transition:background 0.3s;
+    transition:height 0.3s;
+}
+#visual a:hover {
+    background:black;
+}
+#visual a b {
+    margin-left:20px; font-weight:200;
+}
